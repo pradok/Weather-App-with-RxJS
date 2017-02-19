@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Weather with RxJS</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700,inherit,400" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/weather.css">
+    <style type="text/css">
+        .circle {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 12px;
+            line-height: 1.428571429;
+            border-radius: 15px;
+            background-color: LightGray;
+            float: left;
+            margin: 5px;
+        }
+        .center {
+            float: right;
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="center">
+        <h1></h1>
+        <div id="bit7" type="div" class="bitbtn circle"></div>
+        <div id="bit6" type="div" class="bitbtn circle"></div>
+        <div id="bit5" type="div" class="bitbtn circle"></div>
+        <div id="bit4" type="div" class="bitbtn circle"></div>
+        <div id="bit3" type="div" class="bitbtn circle"></div>
+        <div id="bit2" type="div" class="bitbtn circle"></div>
+        <div id="bit1" type="div" class="bitbtn circle"></div>
+        <div id="bit0" type="div" class="bitbtn circle"></div>
+        <div style="height:20px; clear:both"></div>
+        <div>
+            Type on the keyboard to see the ASCII value above.<br/>
+            Press GO to send the entire sequence.<br/>
+            <form onsubmit="event.preventDefault();">
+                <input id="keyboard" style="width: 50%;" placeholder="Type here"></input>
+                <button id="go" class="btn btn-primary" rel="submit">Go</button>
+            </form>
+        </div>
+        <div class="weather clearfix">
+            <div class="location-temp">
+                <p class="location" rel="location"></p>
+                <p class="temperature" rel="temperature"></p>
+            </div>
+            <div class="climate_bg"></div>
+            <div class="info_bg">
+                <img class="dropicon" src="images/Droplet.svg">
+                <p class="humidity" rel="humidity"></p>
+
+                <img class="windicon" src="images/Wind.svg">
+                <div class="windspeed" rel="windspeed"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.js"></script>
+
+<script src="js/weather.js"></script>
+</body>
+</html>
